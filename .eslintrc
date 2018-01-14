@@ -1,15 +1,12 @@
 {
-  "extends": ["airbnb-base", "prettier"],
+  "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
-  "parserOptions": {
-    "ecmaVersion": 2016
+  "rules": {
+    "prettier/prettier": "error"
   },
   "env": {
     "browser": true,
     "es6": true,
     "node": true
-  },
-  "rules": {
-    "prettier/prettier": "error"
   }
 }
