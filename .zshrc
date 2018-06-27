@@ -58,5 +58,6 @@ alias rm="rm -i"
 alias sz="source ~/.zshrc"
 
 alias yb="yarn build"
+alias yl="yarn lint"
 alias ys="yarn start"
 alias yt="yarn test"
