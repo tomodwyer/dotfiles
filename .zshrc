@@ -14,6 +14,11 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# GitKraken
+kraken () {
+  ~/Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd)
+}
+
 # Aliases
 alias battery="pmset -g batt"
 
@@ -33,6 +38,7 @@ alias duf="du -sh *"
 alias fd="find . -type d -name"
 alias ff="find . -type f -name"
 
+alias gk='open -na "GitKraken" --args -p $(pwd)' # This overrides the current gk command
 alias gls="/usr/local/bin/gls --color -lah --group-directories-first"
 
 alias h="history"
