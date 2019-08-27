@@ -1,12 +1,3 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": ["last 2 versions", "> 2% in GB", "IE 11"]
-        }
-      }
-    ]
-  ]
+  "presets": ["@babel/preset-env"]
 }

@@ -5,25 +5,24 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 
 # Plugins
-plugins=(extract git z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(extract git z zsh-autosuggestions zsh-syntax-highlighting zsh-nvm)
 
 # Source
 source $ZSH/oh-my-zsh.sh
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# Brew packages
+export PATH=/usr/local/bin:$PATH
 
-# GitKraken
-kraken () {
-  ~/Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd)
-}
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Aliases
 alias battery="pmset -g batt"
 
 alias brewme="brewup && brewtidy"
-alias brewtidy="brew cleanup && brew prune && brew doctor"
+alias brewtidy="brew cleanup --prune-prefix && brew doctor"
 alias brewup="brew update && brew upgrade"
 
 alias c="clear"
@@ -38,7 +37,6 @@ alias duf="du -sh *"
 alias fd="find . -type d -name"
 alias ff="find . -type f -name"
 
-alias gk='open -na "GitKraken" --args -p $(pwd)' # This overrides the current gk command
 alias gls="/usr/local/bin/gls --color -lah --group-directories-first"
 
 alias h="history"
