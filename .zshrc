@@ -1,67 +1,49 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Theme
-ZSH_THEME="spaceship"
-
-# Plugins
-plugins=(extract git z zsh-autosuggestions zsh-syntax-highlighting zsh-nvm)
-
-# Source
-source $ZSH/oh-my-zsh.sh
-
-# Brew packages
-export PATH=/usr/local/bin:$PATH
-
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Oh my zsh
+  export ZSH="$HOME/.oh-my-zsh"
+  plugins=(git npm nvm osx vscode z zsh-autosuggestions zsh-syntax-highlighting)
+  source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias battery="pmset -g batt"
+  alias battery="pmset -g batt"
 
-alias brewme="brewup && brewtidy"
-alias brewtidy="brew cleanup --prune-prefix && brew doctor"
-alias brewup="brew update && brew upgrade"
+  alias brewme="brewup && brewtidy"
+  alias brewtidy="brew cleanup --prune-prefix && brew doctor"
+  alias brewup="brew update && brew upgrade"
 
-alias c="clear"
+  alias c="clear"
 
-alias cp="cp -i"
+  alias cp="cp -i"
 
-alias dns="dig +short"
+  alias dns="dig +short"
 
-alias dud="du -d 1 -h"
-alias duf="du -sh *"
+  alias dud="du -d 1 -h"
+  alias duf="du -sh *"
 
-alias fd="find . -type d -name"
-alias ff="find . -type f -name"
+  alias fd="find . -type d -name"
+  alias ff="find . -type f -name"
 
-alias gls="/usr/local/bin/gls --color -lah --group-directories-first"
+  alias gls="/usr/local/bin/gls --color -lah --group-directories-first"
 
-alias h="history"
+  alias h="history"
 
-alias help="man"
+  alias help="man"
 
-alias l="ls -lFh"     # size,show type,human readable
-alias la="ls -lAFh"   # long list,show almost all,show type,human readable
-alias ll="ls -l"      # long list
-alias lr="ls -tRFh"   # sorted by date,recursive,show type,human readable
-alias lt="ls -ltFh"   # long list,sorted by date,show type,human readable
+  alias l="ls -lFh"     # size,show type,human readable
+  alias la="ls -lAFh"   # long list,show almost all,show type,human readable
+  alias ll="ls -l"      # long list
+  alias lr="ls -tRFh"   # sorted by date,recursive,show type,human readable
+  alias lt="ls -ltFh"   # long list,sorted by date,show type,human readable
 
-alias mv="mv -i"
+  alias mv="mv -i"
 
-alias nrb="npm run build"
-alias nrs="npm run start"
-alias nrt="npm run test"
+  alias p="ps -f"
 
-alias p="ps -f"
+  alias rm="rm -i"
 
-alias rm="rm -i"
+  alias sz="source ~/.zshrc"
 
-alias sz="source ~/.zshrc"
 
-alias yb="yarn build"
-alias yl="yarn lint"
-alias ys="yarn start"
-alias yt="yarn test"
+# Starship prompt
+  eval "$(starship init zsh)"
