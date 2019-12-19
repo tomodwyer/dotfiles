@@ -24,6 +24,9 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
   alias fd="find . -type d -name"
   alias ff="find . -type f -name"
 
+  alias gitdel="git clean -xdn"
+  alias gitdely="git clean -xdf"
+
   alias gls="/usr/local/bin/gls --color -lah --group-directories-first"
 
   alias h="history"
@@ -43,6 +46,13 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
   alias rm="rm -i"
 
   alias sz="source ~/.zshrc"
+
+  alias yb="yarn run build"
+  alias yd="yarn run dev"
+  alias yi="yarn install --frozen-lockfile --non-interactive"
+  alias yl="yarn run lint"
+  alias ys="yarn run start"
+  alias yt="yarn run test"
 
 
 # Starship prompt
