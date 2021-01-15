@@ -25,7 +25,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
   alias ff="find . -type f -name"
 
   alias gitdel="git clean -xdn"
-  alias gitdely="git clean -xdn | sed -e "s/Would remove //g" | tr '\n' ' ' | awk '{$1=$1};1' | xargs trash"
+  alias gitdely="git clean -xdn | sed -e \"s/Would remove //g\" | tr '\n' ' ' | awk '{\$1=\$1};1' | xargs trash"
 
   alias gls="/usr/local/bin/gls --color -lah --group-directories-first"
 
