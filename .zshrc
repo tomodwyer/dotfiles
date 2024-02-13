@@ -43,9 +43,9 @@ export HISTFILE="$HOME/.zsh_history"
 
   alias nrb="npm run build"
   alias nrd="npm run dev"
-  alias nrd="npm run lint"
+  alias nrl="npm run lint"
   alias nrs="npm run start"
-  alias nrs="npm run test"
+  alias nrt="npm run test"
 
   alias p="ps -f"
 
@@ -79,6 +79,11 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # https://github.com/wting/autojump
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+# https://github.com/zsh-users/zsh-history-substring-search
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Home and end keys
 bindkey '\e[H'    beginning-of-line
