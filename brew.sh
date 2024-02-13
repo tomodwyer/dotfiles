@@ -19,4 +19,5 @@ trash \
 yt-dlp \
 zsh \
 zsh-autosuggestions \
+zsh-history-substring-search \
 zsh-syntax-highlighting
